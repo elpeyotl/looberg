@@ -1,0 +1,26 @@
+ul {
+
+    list-style-type: none;
+
+    li {
+
+        margin-left: -20px;
+        &:before {
+            content: '–';
+            margin-left: -20px;
+            margin-right: 10px;
+        }
+    }
+}
+
+ul.no-bullets {
+      li {
+            margin-left: -40px;
+            &:before {
+                content: '';
+                position: absolute;
+            }
+        }
+}
+
+

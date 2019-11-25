@@ -1,0 +1,141 @@
+body {
+    background-color: blue;
+}
+
+.main-grid {
+    display: grid;
+    grid-template:
+    "sidebar content" auto /
+    1fr     3fr;
+}
+
+header {
+    grid-area: header;
+    background-color: green;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    transition: width .5s ease-in-out;
+    z-index: 100;
+
+    &:hover {
+        width: 100vw;
+    }
+
+
+    &__logo {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    overflow: hidden;
+
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+        }
+    }
+}
+
+.main-content {
+    grid-area: content;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+
+    overflow-x: hidden;
+
+
+    display: grid;
+    grid-template:
+    "content-left" auto
+    "content-right" auto /
+    minmax(200px, 1fr);
+
+
+
+    @include media-breakpoint-up(md) {
+    grid-template:
+    "content-left  content-right" auto /
+    3fr      3fr;
+    }
+
+    @include media-breakpoint-up(lg) {
+    grid-template:
+    "content-left .  content-right" auto /
+    2fr     minmax(0, 40px)  3fr;
+    }
+
+
+}
+
+.content-left {
+    grid-area: content-left;
+    display: grid;
+    margin-top: $spacer * 2;
+
+
+    @include media-breakpoint-up(md) {
+        justify-content: center;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+    }
+
+
+
+}
+
+.content-right {
+    grid-area: content-right;
+
+    display: grid;
+    justify-content: center;
+
+     @include media-breakpoint-up(md) {
+        justify-content: center;
+        margin-top: 5rem;
+        overflow-y: scroll;
+    }
+
+
+}
+
+.news {
+    margin-top: $spacer * 2;
+}
+
+.content {
+    &__heading {
+        margin-bottom: $spacer-big;
+    }
+
+    &__element {
+        margin-bottom: $spacer;
+    }
+}
+
+footer {
+    grid-area: footer;
+    background-color: lightblue;
+}
+
+
+.logo {
+    width: auto;
+    height: 100%;
+}
+
+.container {
+    padding: 20px;
+}
+
+

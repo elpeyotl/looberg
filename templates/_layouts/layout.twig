@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% if entry.title is defined %}{{ entry.title }} - {% endif %}  {{ siteName }}</title>
+    {% do view.registerCssFile ("/Generated/Css/main.min.css") %}
+
+</head>
+<body>
+<div class="main-grid">
+    <div class="sidebar">
+        <div class="sidebar__logo">
+            <img src="logo.jpg" />
+        </div>
+    </div>
+    <div class="main-content" style="background-image: url(background.jpg)">
+        {% block main %}
+
+        {% endblock %}
+    </div>
+</div>
+
+{% do view.registerJsFile ("/Generated/Js/main.min.js") %}
+
+</body>
+</html>
+

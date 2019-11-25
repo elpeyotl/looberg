@@ -1,0 +1,119 @@
+dateModified: 1572478613
+email:
+  fromEmail: ch.perez@mac.com
+  fromName: 'Looberg Website'
+  transportType: craft\mail\transportadapters\Sendmail
+fieldGroups:
+  353ab15b-6247-487f-a3f7-db351c67bd0d:
+    name: Page
+  4e1a7dac-eebb-4ad1-84b1-8cc44f553b1d:
+    name: Common
+fields:
+  d82aafc4-5f24-42e2-8f57-20d3902965cc:
+    name: Heading
+    handle: heading
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 353ab15b-6247-487f-a3f7-db351c67bd0d
+plugins:
+  nethooks:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.2
+sections:
+  12541c9b-ef02-4c04-a9ce-53094034f5b9:
+    name: about
+    handle: about
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      56058890-94cf-47da-8f04-c43f833737f9:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: about
+        template: ''
+    entryTypes:
+      1a0092dc-a943-4023-bd71-fc66e99a25e0:
+        name: about
+        handle: about
+        hasTitleField: false
+        titleLabel: ''
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
+        fieldLayouts:
+          72e94dde-f5cf-4ac8-953b-ce38acdf4773:
+            tabs:
+              -
+                name: Page
+                sortOrder: 1
+                fields:
+                  d82aafc4-5f24-42e2-8f57-20d3902965cc:
+                    required: false
+                    sortOrder: 1
+  eadfad6e-5208-4109-b786-f26fe6450ce8:
+    name: Home
+    handle: home
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      56058890-94cf-47da-8f04-c43f833737f9:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: __home__
+        template: /home
+    entryTypes:
+      7a16ed0a-d3e7-43a2-a879-e2a00070faa8:
+        name: Home
+        handle: home
+        hasTitleField: false
+        titleLabel: ''
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
+        fieldLayouts:
+          effc337a-9aff-4758-aebf-3418a2826241:
+            tabs:
+              -
+                name: Page
+                sortOrder: 1
+                fields:
+                  d82aafc4-5f24-42e2-8f57-20d3902965cc:
+                    required: false
+                    sortOrder: 1
+siteGroups:
+  ae13b5f7-9130-467b-92b3-5519e5865ad2:
+    name: 'Looberg Website'
+sites:
+  56058890-94cf-47da-8f04-c43f833737f9:
+    baseUrl: $DEFAULT_SITE_URL
+    handle: default
+    hasUrls: true
+    language: de
+    name: 'Looberg Website'
+    primary: true
+    siteGroup: ae13b5f7-9130-467b-92b3-5519e5865ad2
+    sortOrder: 1
+system:
+  edition: pro
+  name: 'Looberg Website'
+  live: true
+  schemaVersion: 3.3.3
+  timeZone: America/Los_Angeles
+users:
+  requireEmailVerification: true
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoVolumeUid: null
+  photoSubpath: ''

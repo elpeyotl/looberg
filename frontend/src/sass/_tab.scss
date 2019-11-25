@@ -1,0 +1,23 @@
+.tab {
+    margin-top: $spacer;
+    &__heading {
+        display: inline-block !important;
+        transition: color .5s ease;
+        text-decoration: underline;
+        margin-bottom: $spacer;
+
+        &:not(:first-child) {
+            margin-left: 20px;
+        }
+
+
+        &:hover {
+            cursor: pointer;
+            color: $dark;
+        }
+    }
+
+    &--active {
+        color: $dark
+    }
+}
