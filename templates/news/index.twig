@@ -1,0 +1,38 @@
+{% extends "_layouts/layout" %}
+{% block main %}
+
+<div class="container detail">
+    <h1>Neuigkeiten vom Atelier</h1>
+
+    <div class="detail__content">
+        {% set entryQuery = craft.entries()
+            .section('news')
+            .orderBy('postDate desc')
+        %}
+        {% set entries = entryQuery.all() %}
+        <div class="detail__items">
+            {% for entry in entries %}
+                <div>
+                    <a href="{{ entry.url }}">
+                    {% if entry.bilder|length > 0 %}
+                        {% set image = entry.bilder.first() %}
+                         <img class="detail__items__image" src="{{image.getUrl('thumb')}}" />
+                    {% endif %}
+                    <div class="small">{{ entry.postDate | date("j F Y") }}</div>
+                    <div class="detail__items__title">
+                        {{ entry.title }}
+                    </div>
+                    {# <div class="detail__items__excerpt">
+                        {{entry.infotext |striptags|slice(0,50)|default('...')}}
+                    </div> #}
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <a href="{{ siteUrl }}">Home</a>
+
+</div>
+
+
+{% endblock %}

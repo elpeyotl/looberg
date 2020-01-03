@@ -10,12 +10,16 @@
 </head>
 <body>
 <div class="main-grid">
+     <a rel="home" href="{{ siteUrl }}">
+
     <div class="sidebar">
         <div class="sidebar__logo">
-            <img src="logo.jpg" />
+         <img src="/logo.jpg" />
         </div>
     </div>
-    <div class="main-content" style="background-image: url(background.jpg)">
+
+    </a>
+    <div class="main" style="background-image: url(/background.jpg)">
         {% block main %}
 
         {% endblock %}

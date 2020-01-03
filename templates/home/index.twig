@@ -1,72 +1,76 @@
 {% extends "_layouts/layout" %}
 {% block main %}
 
-<div class="content-left">
+<div class="main-content">
+    <div class="content-left">
+        <div class="container">
+            <div class="content__heading">
+            <h1>Bildhauerei</h1>
+                <h1>Grabmale</h1>
+                <h1>Workshops</h1>
+            </div>
 
-    <div class="container">
-        <div class="content__heading">
-          <h1>Bildhauerei</h1>
-            <h1>Grabmale</h1>
-            <h1>Workshops</h1>
+            <div class="content__element">
+                {{entry.adresse}}
+            </div>
+            <div class="content__element">
+                {{entry.kontakt}}
+            </div>
+            <div class="content__element">
+                {{entry.infotext}}
+            </div>
         </div>
-
-        <div class="content__element">
-            <p>
-            Atelier Looberg<br>
-            Lohnberg 5<br>
-            4315 Zuzgen<br>
-            <a href="mailto:atelier@looberg.ch">atelier@looberg.ch</a>
-            </p>
-        </div>
-        <div class="content__element">
-            <p>
-                Benjamin Fischer<br>
-                Heiko Langecker<br>
-                079 520 73 88
-            </p>
-        </div>
-        <div class="content__element"></div>
     </div>
 
+    <div class="content-right">
+        <div class="container">
+            <div class="img-carousel">
+
+            </div>
+            <a href="{{url('/gallerie')}}">
+            <div id="slider">
+                <slider>
+                    {% for image in entry.bilder %}
+                    <div class="swiper-slide">
+                        <div class="swiper-slide">
+                            <img src="{{image.getUrl('transformed')}}" alt="dummy">
+                        </div>
+                    </div>
+                    {% endfor %}
+                </slider>
+            </div>
+            </a>
+        </div>
+
+
+        <div class="container">
+            <h2>Angebot</h2>
+            {{entry.angebottext}}
+            <div class="tab">
+                <h4 class="tab__heading tab--active">
+                    <a href="{{ url('/news') }}">News</a>
+                </h4>
+                <ul class="no-bullets">
+                    {% set entryQuery = craft.entries()
+                    .section('news')
+                    .orderBy('postDate desc')
+                    .limit(3) %}
+                    {% set entries = entryQuery.all() %}
+
+                    {% for entry in entries %}
+                    <li>
+                        <a href="{{ entry.url }}">
+                        <div class="small">{{ entry.postDate | date("j F Y") }}</div>
+                        {{ entry.title }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="content-right">
-    <div class="container">
-        <div class="img-carousel">
-            <img src="/images/dummy.jpg" alt="dummy">
-        </div>
-    </div>
 
-
-    <div class="container">
-        <h2>Angebot</h2>
-        <p>Gerne sehen wir Ihre Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea re.</p>
-
-        <div class="tab">
-             <h4 class="tab__heading tab--active">News</h4>
-             <ul class="no-bullets">
-                <li>
-                    <a href="">
-                    <div class="small">9.11.2019</div>
-                    <p>Ein newseintrag</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                    <div class="small">8.11.2019</div>
-                    <p>Zweiter newseintrag</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                    <div class="small">6.11.2019</div>
-                    <p>Driter newseintrag</p>
-                    </a>
-                </li>
-             </ul>
-        </div>
-    </div>
-
-</div>
 
 {% endblock %}

@@ -10,6 +10,9 @@
 
 @import "variables";
 
+//components
+@import "../js/components/slider/slider";
+
 
 @import 'layout';
 @import "links";
@@ -17,6 +20,7 @@
 @import 'bullets';
 @import 'offer';
 @import 'tab';
-@import 'img-carousel'
+@import 'img-carousel';
+@import 'detail'
 
 

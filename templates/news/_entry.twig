@@ -1,0 +1,33 @@
+{% extends "_layouts/layout" %}
+{% block main %}
+
+
+
+<div class="container detail">
+    <div class="small">{{ entry.postDate | date("j F Y") }}</div>
+    <h2>{{entry.title}}</h2>
+    <div class="detail__content">
+        {{entry.infotext}}
+        {% if entry.bilder %}
+            <div class="detail__items" id="lightbox">
+                {% set images = [] %}
+                {% for image in entry.bilder %}
+                    <img @click="visible = true; index = {{ loop.index0 }}" class="detail__items__image" src="{{image.getUrl('thumb')}}" />
+                    {% set images = images|merge([image.getUrl('big')]) %}
+                {% endfor %}
+
+                <lightbox
+                @hide="handleHide"
+                :visible="visible"
+                :index="index"
+                :imgs="{{images | json_encode() }}"  />
+
+            </div>
+        {% endif %}
+    </div>
+
+    <a href="{{ url('/news')}}">Alle News</a>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "_layouts/layout" %}
+{% block main %}
+
+<div class="container detail">
+    <h1>Unsere Arbeiten</h1>
+
+    <div class="detail__content">
+        {% set entryQuery = craft.entries()
+            .section('home').first()
+        %}
+
+        <div class="detail__items" id="lightbox">
+            {% set images = [] %}
+            {% for entry in entryQuery.bilder %}
+                <img @click="visible = true; index = {{ loop.index0 }}" class="detail__items__image" src="{{entry.getUrl('thumb')}}" />
+                {% set images = images|merge([entry.getUrl('big')]) %}
+            {% endfor %}
+
+            <lightbox
+            @hide="handleHide"
+            :visible="visible"
+            :index="index"
+            :imgs="{{images | json_encode() }}"  />
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <a href="{{ siteUrl }}">Home</a>
+
+</div>
+
+
+{% endblock %}

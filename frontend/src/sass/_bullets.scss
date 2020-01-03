@@ -14,13 +14,16 @@ ul {
 }
 
 ul.no-bullets {
-      li {
-            margin-left: -40px;
-            &:before {
-                content: '';
-                position: absolute;
-            }
+    li {
+        margin-left: -40px;
+        margin-bottom: 20px;
+        &:before {
+            content: '';
+            position: absolute;
         }
+
+
+    }
 }
 
 

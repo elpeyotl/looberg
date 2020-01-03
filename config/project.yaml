@@ -1,4 +1,4 @@
-dateModified: 1572478613
+dateModified: 1578008655
 email:
   fromEmail: ch.perez@mac.com
   fromName: 'Looberg Website'
@@ -9,6 +9,96 @@ fieldGroups:
   4e1a7dac-eebb-4ad1-84b1-8cc44f553b1d:
     name: Common
 fields:
+  43adb272-4857-409b-8d16-490fe7810873:
+    name: Adresse
+    handle: adresse
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\redactor\Field
+    settings:
+      redactorConfig: ''
+      purifierConfig: ''
+      cleanupHtml: true
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
+      purifyHtml: '1'
+      columnType: text
+      availableVolumes: '*'
+      availableTransforms: '*'
+    contentColumnType: text
+    fieldGroup: 353ab15b-6247-487f-a3f7-db351c67bd0d
+  5f026f54-2a3c-4089-bc16-810eb64d3192:
+    name: Angebottext
+    handle: angebottext
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\redactor\Field
+    settings:
+      redactorConfig: ''
+      purifierConfig: ''
+      cleanupHtml: true
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
+      purifyHtml: '1'
+      columnType: text
+      availableVolumes: '*'
+      availableTransforms: '*'
+    contentColumnType: text
+    fieldGroup: 353ab15b-6247-487f-a3f7-db351c67bd0d
+  861f5ee9-2076-4c3a-8506-640b0b63a4a7:
+    name: Kontakt
+    handle: kontakt
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\redactor\Field
+    settings:
+      redactorConfig: ''
+      purifierConfig: ''
+      cleanupHtml: true
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
+      purifyHtml: '1'
+      columnType: text
+      availableVolumes: '*'
+      availableTransforms: '*'
+    contentColumnType: text
+    fieldGroup: 353ab15b-6247-487f-a3f7-db351c67bd0d
+  c9211e11-86ec-4b58-b4b0-907cba9f64b6:
+    name: Bilder
+    handle: bilder
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: ''
+      defaultUploadLocationSource: 'volume:cf3b7729-2eb5-403e-b01a-6c50f152fc6b'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:cf3b7729-2eb5-403e-b01a-6c50f152fc6b'
+      singleUploadLocationSubpath: ''
+      restrictFiles: '1'
+      allowedKinds:
+        - image
+      sources: '*'
+      source: null
+      targetSiteId: null
+      viewMode: large
+      limit: ''
+      selectionLabel: ''
+      localizeRelations: false
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: 353ab15b-6247-487f-a3f7-db351c67bd0d
   d82aafc4-5f24-42e2-8f57-20d3902965cc:
     name: Heading
     handle: heading
@@ -26,11 +116,67 @@ fields:
       columnType: text
     contentColumnType: text
     fieldGroup: 353ab15b-6247-487f-a3f7-db351c67bd0d
+  fc6b736b-d4e1-4117-8f89-4d1e44bcffff:
+    name: infotext
+    handle: infotext
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\redactor\Field
+    settings:
+      redactorConfig: ''
+      purifierConfig: ''
+      cleanupHtml: true
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
+      purifyHtml: '1'
+      columnType: text
+      availableVolumes: '*'
+      availableTransforms: '*'
+    contentColumnType: text
+    fieldGroup: 353ab15b-6247-487f-a3f7-db351c67bd0d
+imageTransforms:
+  59da797c-c2cc-4d45-99d7-9478aab29baa:
+    format: null
+    handle: big
+    height: null
+    interlace: none
+    mode: crop
+    name: big
+    position: center-center
+    quality: null
+    width: 2400
+  6564f635-128c-4fb8-b158-7faa1348da12:
+    format: null
+    handle: thumb
+    height: 300
+    interlace: none
+    mode: crop
+    name: thumb
+    position: center-center
+    quality: null
+    width: 400
+  681929b4-29df-4b74-8b43-65402af0579a:
+    format: null
+    handle: transformed
+    height: 800
+    interlace: none
+    mode: crop
+    name: transformed
+    position: center-center
+    quality: null
+    width: 1200
 plugins:
   nethooks:
     edition: standard
     enabled: true
     schemaVersion: 1.0.2
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
 sections:
   12541c9b-ef02-4c04-a9ce-53094034f5b9:
     name: about
@@ -62,6 +208,39 @@ sections:
                   d82aafc4-5f24-42e2-8f57-20d3902965cc:
                     required: false
                     sortOrder: 1
+  15334d65-93bf-482b-9b0f-0ee3bc1230a9:
+    name: news
+    handle: news
+    type: channel
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      56058890-94cf-47da-8f04-c43f833737f9:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: 'news/{slug}'
+        template: news/_entry
+    entryTypes:
+      2f9be76a-6b18-40c6-b95e-8e670e19c7cd:
+        name: news
+        handle: news
+        hasTitleField: true
+        titleLabel: Titel
+        titleFormat: ''
+        sortOrder: 1
+        fieldLayouts:
+          ddeb84cd-382b-4b0c-b9d8-9870488ff6f4:
+            tabs:
+              -
+                name: 'Tab 1'
+                sortOrder: 1
+                fields:
+                  c9211e11-86ec-4b58-b4b0-907cba9f64b6:
+                    required: true
+                    sortOrder: 1
+                  fc6b736b-d4e1-4117-8f89-4d1e44bcffff:
+                    required: true
+                    sortOrder: 2
   eadfad6e-5208-4109-b786-f26fe6450ce8:
     name: Home
     handle: home
@@ -86,10 +265,26 @@ sections:
           effc337a-9aff-4758-aebf-3418a2826241:
             tabs:
               -
-                name: Page
+                name: 'Linke Seite'
                 sortOrder: 1
                 fields:
-                  d82aafc4-5f24-42e2-8f57-20d3902965cc:
+                  43adb272-4857-409b-8d16-490fe7810873:
+                    required: false
+                    sortOrder: 1
+                  861f5ee9-2076-4c3a-8506-640b0b63a4a7:
+                    required: false
+                    sortOrder: 2
+                  fc6b736b-d4e1-4117-8f89-4d1e44bcffff:
+                    required: false
+                    sortOrder: 3
+              -
+                name: 'Rechte Seite'
+                sortOrder: 2
+                fields:
+                  5f026f54-2a3c-4089-bc16-810eb64d3192:
+                    required: false
+                    sortOrder: 2
+                  c9211e11-86ec-4b58-b4b0-907cba9f64b6:
                     required: false
                     sortOrder: 1
 siteGroups:
@@ -117,3 +312,13 @@ users:
   defaultGroup: null
   photoVolumeUid: null
   photoSubpath: ''
+volumes:
+  cf3b7729-2eb5-403e-b01a-6c50f152fc6b:
+    name: upload
+    handle: upload
+    type: craft\volumes\Local
+    hasUrls: true
+    url: '@web/uploads'
+    settings:
+      path: '@webroot/uploads'
+    sortOrder: 1

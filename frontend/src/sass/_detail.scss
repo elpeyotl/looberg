@@ -1,0 +1,37 @@
+.detail {
+    & {
+
+        @include media-breakpoint-up(md) {
+            padding: 100px;
+        }
+
+
+        .detail__content {
+            margin: 40px 0 100px 0;
+        }
+
+        .detail__items {
+            display: grid;
+            grid-gap: 20px;
+            justify-content: center;
+
+            @include media-breakpoint-up(md) {
+                justify-content: start;
+            }
+
+             grid-template-columns: repeat(auto-fit, 300px);
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .detail__items__image {
+            margin-bottom: 20px;
+        }
+
+        .detail__items__title {
+            margin-bottom: 20px;
+        }
+    }
+}

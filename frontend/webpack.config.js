@@ -29,9 +29,9 @@ module.exports = {
         ]
     },
     optimization: {
-        splitChunks: {
-            chunks: 'all'
-        }
+        // splitChunks: {
+        //     chunks: 'all'
+        // }
     },
     module: {
         rules: [
