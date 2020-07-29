@@ -13,18 +13,13 @@
 import Swiper from 'swiper';
 
 export default {
-    data () {
-          return {
-            test: '213'
-        }
-    },
     methods: {
         init () {
             var mySwiper = new Swiper ('.swiper-container', {
                 // Optional parameters
                 loop: true,
                 autoplay: {
-                    delay: 4000,
+                    delay: 10000,
                 },
                 effect: 'fade',
             })

@@ -1,4 +1,4 @@
-dateModified: 1578008655
+dateModified: 1590153305
 email:
   fromEmail: ch.perez@mac.com
   fromName: 'Looberg Website'
@@ -178,36 +178,6 @@ plugins:
     enabled: true
     schemaVersion: 2.3.0
 sections:
-  12541c9b-ef02-4c04-a9ce-53094034f5b9:
-    name: about
-    handle: about
-    type: single
-    enableVersioning: true
-    propagationMethod: all
-    siteSettings:
-      56058890-94cf-47da-8f04-c43f833737f9:
-        enabledByDefault: true
-        hasUrls: true
-        uriFormat: about
-        template: ''
-    entryTypes:
-      1a0092dc-a943-4023-bd71-fc66e99a25e0:
-        name: about
-        handle: about
-        hasTitleField: false
-        titleLabel: ''
-        titleFormat: '{section.name|raw}'
-        sortOrder: 1
-        fieldLayouts:
-          72e94dde-f5cf-4ac8-953b-ce38acdf4773:
-            tabs:
-              -
-                name: Page
-                sortOrder: 1
-                fields:
-                  d82aafc4-5f24-42e2-8f57-20d3902965cc:
-                    required: false
-                    sortOrder: 1
   15334d65-93bf-482b-9b0f-0ee3bc1230a9:
     name: news
     handle: news
@@ -220,6 +190,10 @@ sections:
         hasUrls: true
         uriFormat: 'news/{slug}'
         template: news/_entry
+    previewTargets:
+      -
+        label: dev
+        urlFormat: 'http://localhost:3000/'
     entryTypes:
       2f9be76a-6b18-40c6-b95e-8e670e19c7cd:
         name: news
@@ -253,12 +227,16 @@ sections:
         hasUrls: true
         uriFormat: __home__
         template: /home
+    previewTargets:
+      -
+        label: localdev
+        urlFormat: 'http://localhost:3000/'
     entryTypes:
       7a16ed0a-d3e7-43a2-a879-e2a00070faa8:
         name: Home
         handle: home
-        hasTitleField: false
-        titleLabel: ''
+        hasTitleField: true
+        titleLabel: Title
         titleFormat: '{section.name|raw}'
         sortOrder: 1
         fieldLayouts:

@@ -4,15 +4,18 @@ body {
 .main-grid {
     display: grid;
 
+    text-align: center;
+
      grid-template:
         "sidebar" 80px
         "content" auto /
         1fr;
 
     @include media-breakpoint-up(md) {
+        text-align: left;
         grid-template:
         "sidebar content" auto /
-        1fr     4fr;
+        minmax(100px,320px)     4fr;
     }
 
 
@@ -35,10 +38,15 @@ header {
     transition: width .5s ease-in-out;
     z-index: 100;
     position: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: none;
 
      @include media-breakpoint-up(md) {
-         height: 100vh;
-             position: relative;
+        height: 100vh;
+        position: relative;
+        background-image: url('/logo.jpg');
 
       }
 
@@ -48,7 +56,7 @@ header {
 
 
     &__logo {
-    height: 140px;
+    height: auto;
     width: 60px;
     display: flex;
     justify-content: center;
@@ -60,11 +68,12 @@ header {
          transform: rotate(0);
          height: 100%;
          width: 100%;
+         display: none;
       }
 
         img {
             width: 100%;
-            height: 100%;
+            height: auto;
             max-width: 300px;
         }
     }
@@ -116,7 +125,6 @@ header {
 .content-left {
     grid-area: content-left;
     display: grid;
-    margin-top: $spacer * 2;
 
 
     @include media-breakpoint-up(md) {
@@ -130,12 +138,8 @@ header {
 .content-right {
     grid-area: content-right;
 
-    display: grid;
-    justify-content: center;
-
      @include media-breakpoint-up(md) {
-        justify-content: center;
-        margin-top: 4.4rem;
+        margin-top: .4rem;
     }
 
 
@@ -177,7 +181,7 @@ footer {
 .container {
     padding: 20px;
     @include media-breakpoint-up(md) {
-        padding: 40px;
+        padding: 20px 40px;
     }
 }
 

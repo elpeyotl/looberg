@@ -4,6 +4,7 @@
 
 
 <div class="container detail">
+    <a href="{{ url('/news')}}">Alle News</a>
     <div class="small">{{ entry.postDate | date("j F Y") }}</div>
     <h2>{{entry.title}}</h2>
     <div class="detail__content">
@@ -25,9 +26,6 @@
             </div>
         {% endif %}
     </div>
-
-    <a href="{{ url('/news')}}">Alle News</a>
-
 </div>
 
 {% endblock %}

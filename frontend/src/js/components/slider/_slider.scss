@@ -17,19 +17,12 @@
 .swiper-container {
     width: 100%;
     height: auto;
-    max-width: 300px;
-
-    @include media-breakpoint-up(lg) {
-        max-width: 400px;
-    }
-    @include media-breakpoint-up(xl) {
-        max-width: 600px;
-    }
+    max-width: 320px;
 }
 
 .swiper-slide {
     width: 100%;
-    max-width: 600px;
+    max-width: 480px;
     img {
         width: 100%;
     }
